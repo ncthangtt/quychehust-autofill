@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "MS Forms Auto Fill - Quy chế HUST",
+  "version": "1.2.0",
+  "description": "Tự động điền đáp án Microsoft Forms dựa trên bộ đáp án có sẵn (so khớp gần đúng, không tự nộp bài).",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://forms.office.com/*",
+        "https://*.forms.office.com/*",
+        "https://forms.microsoft.com/*",
+        "https://forms.cloud.microsoft/*",
+        "https://*.forms.cloud.microsoft/*"
+      ],
+      "js": ["answers.js", "content.js"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ]
+}
